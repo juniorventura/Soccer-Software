@@ -1,0 +1,8 @@
+-----------------------------Partido asdasdad vs asdasdads
+-----------------------------Estadio: asdasd
+-----------------------------Hora de inicio: 12:29:5
+------------------------------EVENTOS:
+** 00:00:02 ASDAS DASDASD Equipo asdasdad //Jugada ANOTACION GOAL!!!!!!
+** 00:00:05 ASDASASDASD DASDASDASD Equipo asdasdad null Seleccione
+** 00:00:08 ASDASASDASD DASDASDASD Equipo asdasdad // Falta // cargar contra un adversario
+** 00:00:10 ASDASD SS Equipo asdasdads // Falta //  zancadilla a un adversario

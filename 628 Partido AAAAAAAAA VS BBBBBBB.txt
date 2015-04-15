@@ -1,0 +1,6 @@
+-----------------------------Partido AAAAAAAAA vs BBBBBBB
+-----------------------------Estadio: asdasd
+-----------------------------Hora de inicio: 12:52:5
+-----------------------------EVENTOS:
+** 00:00:02 A B Equipo AAAAAAAAA //Jugada ANOTACION GOAL!!!!!!
+** 00:00:07 C D Equipo AAAAAAAAA // Falta //  zancadilla a un adversario

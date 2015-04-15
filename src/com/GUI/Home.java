@@ -36,11 +36,16 @@ public class Home extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.getContentPane().setBackground(Color.WHITE);
+        ContJugadorE1 = 1;
+        ContJugadorE2 = 1;
+        numJeq1.setText(String.valueOf(ContJugadorE1));
+        numJeq2.setText(String.valueOf(ContJugadorE2));
+        
     }
     
     public void crearPartido(){
         
-        e1 = new Equipo(nomEquipo1.getText(), pais.getText(), jugadoresE1);
+        e1 = new Equipo(NomEquipo1.getText(), pais.getText(), jugadoresE1);
         e2 = new Equipo(Nomequipo2.getText(), pais2.getText(), jugadoresE2);
         p = new Partido(fecha.getDate().toString(), estadio.getText(), e1, e2);
         p.setNumeroJugadores(Integer.parseUnsignedInt(numerojugadores.getSelectedItem().toString()));
@@ -76,7 +81,7 @@ public class Home extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        nomEquipo1 = new javax.swing.JTextField();
+        NomEquipo1 = new javax.swing.JTextField();
         pais = new javax.swing.JTextField();
         pais2 = new javax.swing.JTextField();
         Nomequipo2 = new javax.swing.JTextField();
@@ -125,7 +130,7 @@ public class Home extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 255));
 
-        jLabel1.setFont(new java.awt.Font("Tele-Marines", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Creando Partido");
 
@@ -143,7 +148,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(117, 117, 117)
+                .addGap(41, 41, 41)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -158,15 +163,13 @@ public class Home extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Paso 3");
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(102, 153, 255));
 
         fecha.setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel5.setText("Fecha del Partido:");
 
         jLabel6.setText("Estadio:");
-
-        estadio.setBackground(new java.awt.Color(204, 204, 255));
 
         numerojugadores.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2", "7", "8", "9", "10", "11" }));
 
@@ -179,14 +182,6 @@ public class Home extends javax.swing.JFrame {
         jLabel13.setText("Pais");
 
         jLabel14.setText("Pais");
-
-        nomEquipo1.setBackground(new java.awt.Color(204, 204, 255));
-
-        pais.setBackground(new java.awt.Color(204, 204, 255));
-
-        pais2.setBackground(new java.awt.Color(204, 204, 255));
-
-        Nomequipo2.setBackground(new java.awt.Color(204, 204, 255));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -209,7 +204,7 @@ public class Home extends javax.swing.JFrame {
                         .addComponent(fecha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
                         .addComponent(estadio, javax.swing.GroupLayout.Alignment.LEADING))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(nomEquipo1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                        .addComponent(NomEquipo1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
                         .addComponent(pais, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(pais2, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(Nomequipo2, javax.swing.GroupLayout.Alignment.LEADING)))
@@ -233,7 +228,7 @@ public class Home extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nomEquipo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(NomEquipo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13)
                 .addGap(6, 6, 6)
@@ -269,12 +264,13 @@ public class Home extends javax.swing.JFrame {
         numJeq1.setBackground(new java.awt.Color(51, 0, 255));
         numJeq1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         numJeq1.setForeground(new java.awt.Color(255, 255, 255));
-        numJeq1.setText("1");
+        numJeq1.setText("01");
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Datos Equipo No.1");
 
+        jButton4.setBackground(new java.awt.Color(153, 153, 255));
         jButton4.setText("Agregar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -356,12 +352,14 @@ public class Home extends javax.swing.JFrame {
         numJeq2.setBackground(new java.awt.Color(51, 0, 255));
         numJeq2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         numJeq2.setForeground(new java.awt.Color(255, 255, 255));
-        numJeq2.setText("1");
+        numJeq2.setText("01");
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("Datos Equipo No.2");
 
+        jButton6.setBackground(new java.awt.Color(102, 102, 255));
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Agregar");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -426,6 +424,11 @@ public class Home extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 0, 255));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Listo");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel22.setText("Paso 2");
@@ -466,8 +469,7 @@ public class Home extends javax.swing.JFrame {
                                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
@@ -529,7 +531,8 @@ public class Home extends javax.swing.JFrame {
                         apellJeq2.setText(null);
                         nomJeq2.setText(null);
                         numJeq2.setText(String.valueOf(jugadoresE2.size()));
-                        
+                        ContJugadorE2++;
+                        numJeq2.setText("0"+ContJugadorE2);
                         
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "Ya hay un portero en el equipo");
@@ -556,6 +559,7 @@ public class Home extends javax.swing.JFrame {
                     nomJeq1.getText().toUpperCase(), 
                     apellJeq1.getText().toUpperCase(),
                     Integer.parseInt(numJeq1.getText()),
+                       
                     posJeq1.getSelectedItem().toString().toUpperCase());
                 
                 if(exists(jugadoresE1, j)) {
@@ -568,6 +572,8 @@ public class Home extends javax.swing.JFrame {
                         apellJeq1.setText(null);
                         nomJeq1.setText(null);
                         numJeq1.setText(String.valueOf(jugadoresE1.size()));
+                        ContJugadorE1++;
+                        numJeq1.setText("0"+ContJugadorE1);
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "Ya hay un portero en el equipo");
                     }
@@ -582,6 +588,19 @@ public class Home extends javax.swing.JFrame {
         else JOptionPane.showMessageDialog(rootPane, "El equipo esta completo, no puede agregar otro jugador");
         
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       
+        if (isTeamComplete(jugadoresE1) && isTeamComplete(jugadoresE2) && isDataCompleted()) {
+
+            crearPartido();
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "No ha completado el Formulario");
+        }
+
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -619,6 +638,7 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField NomEquipo1;
     private javax.swing.JTextField Nomequipo2;
     private javax.swing.JTextField apellJeq1;
     private javax.swing.JTextField apellJeq2;
@@ -656,7 +676,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField nomEquipo1;
     private javax.swing.JTextField nomJeq1;
     private javax.swing.JTextField nomJeq2;
     private javax.swing.JTextField numJeq1;
@@ -674,7 +693,7 @@ public class Home extends javax.swing.JFrame {
         fecha.setDate(null);
         estadio.setText("");
         numerojugadores.setSelectedIndex(0);
-        nomEquipo1.setText("");
+        NomEquipo1.setText("");
         pais.setText("");
         Nomequipo2.setText("");
         pais2.setText("");
@@ -702,4 +721,16 @@ public class Home extends javax.swing.JFrame {
         
         return list.stream().anyMatch((item) -> (item.getNombre().equals(j.getNombre()) && item.getApellido().equalsIgnoreCase(j.getApellido())));
     }
+   
+    public boolean isDataCompleted() {
+
+        if (NomEquipo1.getText().isEmpty() || Nomequipo2.getText().isEmpty()
+                || pais.getText().isEmpty() || pais.getText().isEmpty() || estadio.getText().isEmpty() || fecha.getDate() == null) {
+            return false;
+        }
+
+        return true;
+
+    }
+   
 }

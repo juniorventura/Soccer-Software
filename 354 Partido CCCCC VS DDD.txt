@@ -1,0 +1,5 @@
+-----------------------------Partido CCCCC vs DDD
+-----------------------------Estadio: sdasd
+-----------------------------Hora de inicio: 12:55:49
+-----------------------------EVENTOS:
+** 00:00:02 null Equipo CCCCC //Jugada ANOTACION GOAL!!!!!!

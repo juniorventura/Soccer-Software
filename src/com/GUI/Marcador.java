@@ -9,11 +9,15 @@ import com.Core.*;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
@@ -52,7 +56,8 @@ public class Marcador extends javax.swing.JFrame {
         ss = 0;
         mm = 0;
         hh = 0;
-
+        se1 = 0;
+        se2 = 0;
         modelocombo = new DefaultComboBoxModel();
 
         NjugadoresE1.setModel(modelocombo);
@@ -202,7 +207,7 @@ public class Marcador extends javax.swing.JFrame {
 
     public String insertarFaltaJugadaE1() {
 
-        int n = Integer.parseInt(NjugadoresE1.getSelectedItem().toString());
+        int n = (NjugadoresE1.getSelectedIndex()+1);
         int k = selectorJugadaE1.getSelectedIndex();
 
         if (faltaE1 == true) {
@@ -213,6 +218,7 @@ public class Marcador extends javax.swing.JFrame {
 
             if (selectorJugadaE1.getSelectedIndex() == 2) {
                 p.getEquipo1().setScore(++se1);
+                scoreE1.setText(String.valueOf(se1));
             }
             if (p.getEquipo1().getScore() < 10) {
                 scoreE1.setText("0" + String.valueOf(p.getEquipo1().getScore()));
@@ -227,7 +233,7 @@ public class Marcador extends javax.swing.JFrame {
 
     public String insertarFaltaJugadaE2() {
 
-        int n = Integer.parseInt(NjugadoresE2.getSelectedItem().toString());
+        int n = (NjugadoresE2.getSelectedIndex()+1);
         int k = selectorJugadaE2.getSelectedIndex();
         if (faltaE2 == true) {
 
@@ -236,7 +242,8 @@ public class Marcador extends javax.swing.JFrame {
         } else {
 
             if (selectorJugadaE2.getSelectedIndex() == 2) {
-                p.getEquipo1().setScore(++se2);
+                p.getEquipo2().setScore(++se2);
+                scoreE2.setText(String.valueOf(se2));
             }
             if (p.getEquipo2().getScore() < 10) {
                 scoreE2.setText("0" + String.valueOf(p.getEquipo2().getScore()));
@@ -268,7 +275,7 @@ public class Marcador extends javax.swing.JFrame {
                     f.write("\r\n");
                 }
                 f.close();
-
+                agregarAMetadadta(nombre);
             } catch (IOException e) {
                 JOptionPane.showMessageDialog(rootPane, "NO SE PUDO CREAR EL ARCHIVO");
             }
@@ -294,6 +301,62 @@ public class Marcador extends javax.swing.JFrame {
 
     }
     
+    public void agregarAMetadadta(String nombreArchivo) {
+        
+        File f;
+        String linea;
+        FileReader lector = null;
+        FileWriter escritor = null;
+        BufferedReader lector2 = null;
+
+        f = new File("METADATA1.txt");
+
+        if (f.exists()) {
+
+            try {
+                escritor = new FileWriter(f);
+                lector = new FileReader(f);
+                lector2 = new BufferedReader(lector);
+              while((linea = lector2.readLine())!=null);
+              if(linea == null) escritor.write(nombreArchivo);
+                
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(rootPane, "NO SE PUDO ESCRIBIR EN LA METADATA :(");
+            }
+            finally{
+                try {
+                    lector2.close();
+                    lector.close();
+                    escritor.close();
+                } catch (IOException ex) {
+                   JOptionPane.showMessageDialog(rootPane, "Hubo un error al cerrar el archivo :("); ;
+                }
+
+            }
+
+        } else {
+
+            try {
+                f.createNewFile();
+                escritor.close();
+                
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(rootPane, "NO SE PUDO CREAR EL ARCHIVO :(");
+            } finally {
+                try {
+                    escritor.close();
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(tiempoTexto, "No se pudo cerrar el archivo");
+                }
+            }
+
+        }
+
+
+        
+        
+    }
+    
     public void iniciarPartido(){
         
          timer.start();
@@ -303,7 +366,7 @@ public class Marcador extends javax.swing.JFrame {
             modelo.addElement("-----------------------------Partido " + p.getEquipo1().getNombre() + " vs " + p.getEquipo2().getNombre());
             modelo.addElement("-----------------------------Estadio: " + p.getEstadio());
             modelo.addElement("-----------------------------Hora de inicio: " + h + ":" + m + ":" + s);
-            modelo.addElement("------------------------------EVENTOS:");
+            modelo.addElement("-----------------------------EVENTOS:");
             p.setPartidoiniciado(true);
     }
     
@@ -427,9 +490,9 @@ public class Marcador extends javax.swing.JFrame {
         jLabel5.setText("SCORE");
 
         scoreE1.setEditable(false);
-        scoreE1.setBackground(new java.awt.Color(0, 102, 102));
+        scoreE1.setBackground(new java.awt.Color(102, 0, 0));
         scoreE1.setFont(new java.awt.Font("RussellSquare", 1, 48)); // NOI18N
-        scoreE1.setForeground(new java.awt.Color(255, 255, 255));
+        scoreE1.setForeground(new java.awt.Color(255, 51, 51));
         scoreE1.setText("00");
         scoreE1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
@@ -558,9 +621,9 @@ public class Marcador extends javax.swing.JFrame {
         jLabel11.setText("SCORE");
 
         scoreE2.setEditable(false);
-        scoreE2.setBackground(new java.awt.Color(0, 102, 102));
+        scoreE2.setBackground(new java.awt.Color(102, 0, 0));
         scoreE2.setFont(new java.awt.Font("RussellSquare", 1, 48)); // NOI18N
-        scoreE2.setForeground(new java.awt.Color(255, 255, 255));
+        scoreE2.setForeground(new java.awt.Color(255, 51, 51));
         scoreE2.setText("00");
         scoreE2.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
@@ -816,9 +879,9 @@ public class Marcador extends javax.swing.JFrame {
     }//GEN-LAST:event_selectorFaltaE1ItemStateChanged
 
     private void selectorJugadaE1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_selectorJugadaE1ItemStateChanged
-        if (selectorFaltaE1.getSelectedIndex() != 0) {
-            faltaE1 = true;
-            jugadaE1 = false;
+        if (selectorJugadaE1.getSelectedIndex() != 0) {
+            faltaE1 = false;
+            jugadaE1 = true;
 
         }
 
