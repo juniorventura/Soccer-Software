@@ -405,6 +405,11 @@ public class Home extends javax.swing.JFrame {
         jLabel23.setText("Paso 1");
 
         jButton3.setText("Borrar Todo");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -468,6 +473,10 @@ public class Home extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
       
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        clear();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -551,4 +560,25 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JComboBox posJeq1;
     private javax.swing.JComboBox posJeq2;
     // End of variables declaration//GEN-END:variables
+
+    private void clear() {
+        jugadoresE1.clear();
+        jugadoresE2.clear();
+        fecha.setDate(null);
+        estadio.setText("");
+        numerojugadores.setSelectedIndex(0);
+        nomEquipo1.setText("");
+        pais.setText("");
+        Nomequipo2.setText("");
+        pais2.setText("");
+        nomJeq1.setText("");
+        apellJeq1.setText("");
+        nomJeq2.setText("");
+        apellJeq2.setText("");
+        numJeq1.setText("1");
+        numJeq2.setText("1");
+        posJeq1.setSelectedIndex(0);
+        posJeq2.setSelectedIndex(0);
+        
+    }
 }
