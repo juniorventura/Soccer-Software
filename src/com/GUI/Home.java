@@ -11,6 +11,7 @@ import com.Core.Jugador;
 import com.Core.Partido;
 import java.awt.Color;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -89,6 +90,7 @@ public class Home extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         numJeq1 = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         nomJeq2 = new javax.swing.JTextField();
@@ -99,6 +101,7 @@ public class Home extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         numJeq2 = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
@@ -272,27 +275,39 @@ public class Home extends javax.swing.JFrame {
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Datos Equipo No.1");
 
+        jButton4.setText("Agregar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel15)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(numJeq1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel10)
-                        .addComponent(jLabel9)
-                        .addComponent(jLabel8)
-                        .addComponent(nomJeq1)
-                        .addComponent(apellJeq1)
-                        .addComponent(posJeq1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel10)
+                                .addComponent(jLabel9)
+                                .addComponent(jLabel8)
+                                .addComponent(nomJeq1)
+                                .addComponent(apellJeq1)
+                                .addComponent(posJeq1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(jLabel20))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(numJeq1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel20)))
+                        .addGap(49, 49, 49)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -316,6 +331,8 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(numJeq1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel15))
+                .addGap(18, 18, 18)
+                .addComponent(jButton4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -345,6 +362,13 @@ public class Home extends javax.swing.JFrame {
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("Datos Equipo No.2");
 
+        jButton6.setText("Agregar");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -354,20 +378,23 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel19)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(numJeq2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel18)
                                 .addComponent(jLabel17)
                                 .addComponent(jLabel16)
                                 .addComponent(nomJeq2)
                                 .addComponent(apellJeq2)
-                                .addComponent(posJeq2, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(posJeq2, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel19)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(numJeq2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addComponent(jLabel21)))
+                        .addComponent(jLabel21))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -391,6 +418,8 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(numJeq2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19))
+                .addGap(18, 18, 18)
+                .addComponent(jButton6)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -478,6 +507,82 @@ public class Home extends javax.swing.JFrame {
         clear();
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        if(isTeamComplete(jugadoresE2)==false)
+         {
+              
+            if(!nomJeq2.getText().isEmpty() && !apellJeq2.getText().isEmpty() &&  !numJeq2.getText().isEmpty())
+            {
+            Jugador j = new Jugador(
+                    nomJeq2.getText().toUpperCase(), 
+                    apellJeq2.getText().toUpperCase(),
+                    Integer.parseInt(numJeq2.getText()),
+                    posJeq2.getSelectedItem().toString().toUpperCase());
+            
+                if(exists(jugadoresE2, j)) {
+                    JOptionPane.showMessageDialog(rootPane, "Ya existe un jugador con ese mismo nombre y apellido");
+                } else {
+                    boolean pass = j.getPosicion().equals("PORTERO");
+                    
+                    if((!p2 && pass) || !pass) {
+                        jugadoresE2.add(j);
+                        apellJeq2.setText(null);
+                        nomJeq2.setText(null);
+                        numJeq2.setText(String.valueOf(jugadoresE2.size()));
+                        
+                        
+                    } else {
+                        JOptionPane.showMessageDialog(rootPane, "Ya hay un portero en el equipo");
+                    }
+                    
+                    if(pass) {
+                        p2 = true;
+                    }
+                }
+            }
+            else JOptionPane.showMessageDialog(rootPane, "Debe completar todos los campos");
+        }
+        else JOptionPane.showMessageDialog(rootPane, "El equipo esta completo, no puede agregar otro jugador");
+        
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+          if(isTeamComplete(jugadoresE1)==false){
+            
+            if(!nomJeq1.getText().isEmpty() && !apellJeq1.getText().isEmpty() &&  !numJeq1.getText().isEmpty())
+            {
+                
+                Jugador j = new Jugador(
+                    nomJeq1.getText().toUpperCase(), 
+                    apellJeq1.getText().toUpperCase(),
+                    Integer.parseInt(numJeq1.getText()),
+                    posJeq1.getSelectedItem().toString().toUpperCase());
+                
+                if(exists(jugadoresE1, j)) {
+                    JOptionPane.showMessageDialog(rootPane, "Ya existe un jugador con ese mismo nombre y apellido");
+                } else {
+                    boolean pass = j.getPosicion().equals("PORTERO");
+                    
+                    if((!p1 && pass) || !pass) {
+                        jugadoresE1.add(j);
+                        apellJeq1.setText(null);
+                        nomJeq1.setText(null);
+                        numJeq1.setText(String.valueOf(jugadoresE1.size()));
+                    } else {
+                        JOptionPane.showMessageDialog(rootPane, "Ya hay un portero en el equipo");
+                    }
+                    
+                    if(pass) {
+                        p1 = true;
+                    }
+                }
+            }
+            else JOptionPane.showMessageDialog(rootPane, "Debe completar todos los campos");
+        }
+        else JOptionPane.showMessageDialog(rootPane, "El equipo esta completo, no puede agregar otro jugador");
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -522,6 +627,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -579,6 +686,20 @@ public class Home extends javax.swing.JFrame {
         numJeq2.setText("1");
         posJeq1.setSelectedIndex(0);
         posJeq2.setSelectedIndex(0);
+        p1 = false;
+        p2 = false;
         
+    }
+
+    private boolean isTeamComplete(ArrayList<Jugador> j) {
+       
+       int i = Integer.parseInt(numerojugadores.getSelectedItem().toString());
+        return j.size() == i;
+       
+    }
+
+   private boolean exists(ArrayList<Jugador> list, Jugador j) {
+        
+        return list.stream().anyMatch((item) -> (item.getNombre().equals(j.getNombre()) && item.getApellido().equalsIgnoreCase(j.getApellido())));
     }
 }
