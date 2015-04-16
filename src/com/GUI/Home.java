@@ -6,6 +6,11 @@
 
 package com.GUI;
 
+import com.Core.Equipo;
+import com.Core.Jugador;
+import com.Core.Partido;
+import java.util.ArrayList;
+
 /**
  *
  * @author Junior C
@@ -15,8 +20,28 @@ public class Home extends javax.swing.JFrame {
     /**
      * Creates new form Home
      */
+    int cantidadJugadores,ContJugadorE1,ContJugadorE2;
+    private Partido p;
+    private Equipo e1,e2;
+    private ArrayList<Jugador> jugadoresE1 = new ArrayList<Jugador>();
+    private ArrayList<Jugador> jugadoresE2 = new ArrayList<Jugador>();
+    private boolean p1,p2,pass,pass2;
+    
+    
     public Home() {
         initComponents();
+    }
+    
+    public void crearPartido(){
+        
+        e1 = new Equipo(nomEquipo1.getText(),pais.getText(),jugadoresE1);
+            e2 = new Equipo(Nomequipo2.getText(),pais2.getText(),jugadoresE2);
+            p = new Partido(fecha.getDate().toString(),estadio.getText(),e1,e2);
+            p.setNumeroJugadores(Integer.parseUnsignedInt(numerojugadores.getSelectedItem().toString()));
+         
+           Marcador m = new Marcador(p);
+           m.setVisible(true);
+           dispose(); 
     }
 
     /**
@@ -35,17 +60,17 @@ public class Home extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        fecha = new com.toedter.calendar.JDateChooser();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        estadio = new javax.swing.JTextField();
         numerojugadores = new javax.swing.JComboBox();
         jLabel7 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        Nomequipo1 = new javax.swing.JTextField();
+        nomEquipo1 = new javax.swing.JTextField();
         pais = new javax.swing.JTextField();
         pais2 = new javax.swing.JTextField();
         Nomequipo2 = new javax.swing.JTextField();
@@ -141,10 +166,10 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addComponent(fecha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
+                        .addComponent(estadio, javax.swing.GroupLayout.Alignment.LEADING))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(Nomequipo1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                        .addComponent(nomEquipo1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
                         .addComponent(pais, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(pais2, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(Nomequipo2, javax.swing.GroupLayout.Alignment.LEADING)))
@@ -156,11 +181,11 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel5)
                 .addGap(10, 10, 10)
-                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(estadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -168,7 +193,7 @@ public class Home extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Nomequipo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nomEquipo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13)
                 .addGap(6, 6, 6)
@@ -408,13 +433,13 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Nomequipo1;
     private javax.swing.JTextField Nomequipo2;
     private javax.swing.JTextField apellJeq1;
     private javax.swing.JTextField apellJeq2;
+    private javax.swing.JTextField estadio;
+    private com.toedter.calendar.JDateChooser fecha;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -440,7 +465,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField nomEquipo1;
     private javax.swing.JTextField nomJeq1;
     private javax.swing.JTextField nomJeq2;
     private javax.swing.JTextField numJeq1;

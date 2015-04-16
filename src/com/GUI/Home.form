@@ -164,11 +164,11 @@
                       <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                           <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jDateChooser1" alignment="0" pref="209" max="32767" attributes="0"/>
-                          <Component id="jTextField1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="fecha" alignment="0" pref="209" max="32767" attributes="0"/>
+                          <Component id="estadio" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="Nomequipo1" alignment="0" pref="206" max="32767" attributes="0"/>
+                          <Component id="nomEquipo1" alignment="0" pref="206" max="32767" attributes="0"/>
                           <Component id="pais" alignment="0" max="32767" attributes="0"/>
                           <Component id="pais2" alignment="0" max="32767" attributes="0"/>
                           <Component id="Nomequipo2" alignment="0" max="32767" attributes="0"/>
@@ -184,11 +184,11 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                  <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
+                  <Component id="fecha" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
+                  <Component id="estadio" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -197,7 +197,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="Nomequipo1" min="-2" max="-2" attributes="0"/>
+                  <Component id="nomEquipo1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
@@ -216,7 +216,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+        <Component class="com.toedter.calendar.JDateChooser" name="fecha">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
@@ -228,7 +228,7 @@
             <Property name="text" type="java.lang.String" value="Estadio:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="estadio">
         </Component>
         <Component class="javax.swing.JComboBox" name="numerojugadores">
           <Properties>
@@ -269,7 +269,7 @@
             <Property name="text" type="java.lang.String" value="Pais"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="Nomequipo1">
+        <Component class="javax.swing.JTextField" name="nomEquipo1">
         </Component>
         <Component class="javax.swing.JTextField" name="pais">
         </Component>
