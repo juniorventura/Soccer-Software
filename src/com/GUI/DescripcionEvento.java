@@ -6,6 +6,8 @@
 
 package com.GUI;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Junior C
@@ -18,6 +20,29 @@ public class DescripcionEvento extends javax.swing.JFrame {
     public DescripcionEvento() {
         initComponents();
         setLocationRelativeTo(null);
+    }
+    
+    public boolean verificar(){
+        String s1 = new String();
+        
+        s1 = descripcion.getText();        
+        if (s1.charAt(0) == '0' || s1.charAt(0) == '1' || s1.charAt(0) == '2' ||  +
+            s1.charAt(0) == '3' || s1.charAt(0) == '4' || s1.charAt(0) == '5' ||  + 
+            s1.charAt(0) == '6' || s1.charAt(0) == '7' || s1.charAt(0) == '8' || s1.charAt(0) == '9'){
+            return false;} else {
+            return true;}
+    }    
+    public void agregar (){
+        
+        if (!verificar()){
+            JOptionPane.showMessageDialog(descripcion, "El texto no puede empezar por un número");
+            descripcion.setText("");
+        } else { 
+            if (!descripcion.getText().isEmpty()){
+                Marcador.modelo.addElement("**"+Marcador.getTiempoPartido()+" "+ descripcion.getText() );} else {
+                JOptionPane.showMessageDialog(descripcion, "Debe de especificar el evento");
+            }
+        }        
     }
 
     /**
@@ -73,7 +98,7 @@ public class DescripcionEvento extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
- 
+       agregar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -112,7 +137,7 @@ public class DescripcionEvento extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField descripcion;
+    public javax.swing.JTextField descripcion;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
