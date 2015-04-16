@@ -14,6 +14,7 @@ public class Jugador {
     
     private String nombre, apellido, posicion;
     private int  numero;
+    private int demo;
     
     public Jugador(String nombre, String apellido, int numero, String posicion)
     {
