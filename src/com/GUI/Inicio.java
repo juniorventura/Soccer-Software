@@ -23,16 +23,20 @@ public class Inicio extends javax.swing.JFrame {
     
     public Inicio() {
         
-        initComponents();
-         this.getContentPane().setBackground(Color.BLUE);
-        setLocationRelativeTo(null); 
-        descripcioncrear.setVisible(false);
        
-        descripcionguardar.setVisible(false);
-        descripcionsobre.setVisible(false);
+        
+        initComponents();
+        
+        
+         this.getContentPane().setBackground(Color.BLUE);
+       
+        setLocationRelativeTo(null); 
+       
         seleccion = java.applet.Applet.newAudioClip(getClass().getResource("/com/Sonidos/Selection.wav"));
     
-        
+         descripcioncrear.setVisible(false);
+        descripcionguardar.setVisible(false);
+        descripcionsobre.setVisible(false);
         
       
         
@@ -48,39 +52,35 @@ public class Inicio extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        descripcioncrear = new javax.swing.JTextArea();
+        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         cargarPartido = new javax.swing.JLabel();
+        descripcioncrear = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         crearPartido = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        descripcionguardar = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
         descripcionsobre = new javax.swing.JTextArea();
         sobrelaApp = new javax.swing.JLabel();
+        descripcionguardar = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        descripcionguardar1 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
 
+        jLabel4.setText("jLabel4");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Soccer Software");
-        setBackground(new java.awt.Color(0, 0, 255));
+        setBackground(new java.awt.Color(51, 51, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        descripcioncrear.setEditable(false);
-        descripcioncrear.setBackground(new java.awt.Color(51, 51, 255));
-        descripcioncrear.setColumns(20);
-        descripcioncrear.setForeground(new java.awt.Color(255, 255, 255));
-        descripcioncrear.setRows(5);
-        descripcioncrear.setText("Permite crear un partido\nconfigurando\nlos datos basicos \nnecesarios de los equipos");
-        descripcioncrear.setBorder(null);
-        jScrollPane1.setViewportView(descripcioncrear);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 260, 100));
 
         jLabel1.setFont(new java.awt.Font("Tele-Marines", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -129,7 +129,38 @@ public class Inicio extends javax.swing.JFrame {
                 cargarPartidoMouseExited(evt);
             }
         });
-        getContentPane().add(cargarPartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+        getContentPane().add(cargarPartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 270, -1));
+
+        descripcioncrear.setBackground(new java.awt.Color(0, 0, 255));
+
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Permite crear un partido configurando los datos");
+
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText(" basicos  necesarios de los equipos");
+
+        javax.swing.GroupLayout descripcioncrearLayout = new javax.swing.GroupLayout(descripcioncrear);
+        descripcioncrear.setLayout(descripcioncrearLayout);
+        descripcioncrearLayout.setHorizontalGroup(
+            descripcioncrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(descripcioncrearLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(descripcioncrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        descripcioncrearLayout.setVerticalGroup(
+            descripcioncrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(descripcioncrearLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8)
+                .addContainerGap(55, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(descripcioncrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, -1, -1));
 
         jPanel3.setLayout(null);
 
@@ -147,20 +178,6 @@ public class Inicio extends javax.swing.JFrame {
         });
         jPanel3.add(crearPartido);
         crearPartido.setBounds(230, 200, 147, 22);
-
-        descripcionguardar.setEditable(false);
-        descripcionguardar.setBackground(new java.awt.Color(0, 153, 153));
-        descripcionguardar.setColumns(20);
-        descripcionguardar.setForeground(new java.awt.Color(255, 255, 255));
-        descripcionguardar.setRows(5);
-        descripcionguardar.setText("Permite cargar los\npartidos guardados\npara su visualizacion\nen la aplicacion");
-        descripcionguardar.setBorder(null);
-        descripcionguardar.setCaretColor(new java.awt.Color(255, 255, 255));
-        descripcionguardar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jScrollPane2.setViewportView(descripcionguardar);
-
-        jPanel3.add(jScrollPane2);
-        jScrollPane2.setBounds(20, 180, 250, 130);
 
         descripcionsobre.setEditable(false);
         descripcionsobre.setBackground(new java.awt.Color(102, 102, 255));
@@ -189,9 +206,57 @@ public class Inicio extends javax.swing.JFrame {
         jPanel3.add(sobrelaApp);
         sobrelaApp.setBounds(370, 250, 160, 17);
 
+        descripcionguardar.setBackground(new java.awt.Color(0, 153, 153));
+        descripcionguardar.setForeground(new java.awt.Color(0, 153, 153));
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Permite cargar los partidos guardados para");
+
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText(" su visualizacion en la aplicacion");
+
+        javax.swing.GroupLayout descripcionguardarLayout = new javax.swing.GroupLayout(descripcionguardar);
+        descripcionguardar.setLayout(descripcionguardarLayout);
+        descripcionguardarLayout.setHorizontalGroup(
+            descripcionguardarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(descripcionguardarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(descripcionguardarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+        descripcionguardarLayout.setVerticalGroup(
+            descripcionguardarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(descripcionguardarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+
+        jPanel3.add(descripcionguardar);
+        descripcionguardar.setBounds(10, 180, 260, 70);
+
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Imagenes/fondoHome.jpg"))); // NOI18N
         jPanel3.add(fondo);
         fondo.setBounds(0, 0, 530, 430);
+
+        descripcionguardar1.setEditable(false);
+        descripcionguardar1.setBackground(new java.awt.Color(0, 153, 153));
+        descripcionguardar1.setColumns(20);
+        descripcionguardar1.setForeground(new java.awt.Color(255, 255, 255));
+        descripcionguardar1.setLineWrap(true);
+        descripcionguardar1.setRows(5);
+        descripcionguardar1.setText("Permite cargar los\npartidos guardados\npara su visualizacion\nen la aplicacion");
+        descripcionguardar1.setBorder(null);
+        descripcionguardar1.setCaretColor(new java.awt.Color(255, 255, 255));
+        descripcionguardar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane4.setViewportView(descripcionguardar1);
+
+        jPanel3.add(jScrollPane4);
+        jScrollPane4.setBounds(20, 180, 250, 130);
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 430));
 
@@ -276,19 +341,24 @@ public class Inicio extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cargarPartido;
     private javax.swing.JLabel crearPartido;
-    private javax.swing.JTextArea descripcioncrear;
-    private javax.swing.JTextArea descripcionguardar;
+    private javax.swing.JPanel descripcioncrear;
+    private javax.swing.JPanel descripcionguardar;
+    private javax.swing.JTextArea descripcionguardar1;
     private javax.swing.JTextArea descripcionsobre;
     private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JLabel sobrelaApp;
     // End of variables declaration//GEN-END:variables
 }

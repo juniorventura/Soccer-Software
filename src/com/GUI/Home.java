@@ -56,8 +56,6 @@ public class Home extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         fecha = new com.toedter.calendar.JDateChooser();
@@ -95,12 +93,15 @@ public class Home extends javax.swing.JFrame {
         numJeq2 = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 255));
 
-        jLabel1.setFont(new java.awt.Font("RussellSquare", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tele-Marines", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Creando Partido");
 
@@ -113,7 +114,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(146, 146, 146)
+                .addGap(69, 69, 69)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -124,17 +125,19 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jLabel1))
         );
 
-        jLabel2.setText("Paso 1");
-
-        jLabel3.setText("Paso 2");
-
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Paso 3");
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        fecha.setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel5.setText("Fecha del Partido:");
 
         jLabel6.setText("Estadio:");
+
+        estadio.setBackground(new java.awt.Color(204, 204, 255));
+        estadio.setForeground(new java.awt.Color(229, 249, 250));
 
         numerojugadores.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2", "7", "8", "9", "10", "11" }));
 
@@ -147,6 +150,18 @@ public class Home extends javax.swing.JFrame {
         jLabel13.setText("Pais");
 
         jLabel14.setText("Pais");
+
+        nomEquipo1.setBackground(new java.awt.Color(204, 204, 255));
+        nomEquipo1.setForeground(new java.awt.Color(229, 249, 250));
+
+        pais.setBackground(new java.awt.Color(204, 204, 255));
+        pais.setForeground(new java.awt.Color(229, 249, 250));
+
+        pais2.setBackground(new java.awt.Color(204, 204, 255));
+        pais2.setForeground(new java.awt.Color(229, 249, 250));
+
+        Nomequipo2.setBackground(new java.awt.Color(204, 204, 255));
+        Nomequipo2.setForeground(new java.awt.Color(229, 249, 250));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -211,14 +226,18 @@ public class Home extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(153, 153, 255));
 
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Nombre del jugador");
 
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Apellido del jugador");
 
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Posicion del jugador");
 
         posJeq1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Portero", "Ataque", "Defensa", "Medio Campo" }));
 
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Numero del jugador");
 
         numJeq1.setEditable(false);
@@ -278,14 +297,18 @@ public class Home extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(102, 102, 255));
 
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Nombre del jugador");
 
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Apellido del jugador");
 
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Posicion del jugador");
 
         posJeq2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Portero", "Ataque", "Defensa", "Medio Campo" }));
 
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Numero del jugador");
 
         numJeq2.setEditable(false);
@@ -345,7 +368,17 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 255));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Listo");
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel22.setText("Paso 2");
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel23.setText("Paso 1");
+
+        jButton3.setText("Borrar Todo");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -356,11 +389,11 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(108, 108, 108)
-                        .addComponent(jLabel2)
-                        .addGap(180, 180, 180)
-                        .addComponent(jLabel3)
+                        .addGap(86, 86, 86)
+                        .addComponent(jLabel23)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel22)
+                        .addGap(131, 131, 131)
                         .addComponent(jLabel4)
                         .addGap(71, 71, 71))
                     .addGroup(layout.createSequentialGroup()
@@ -368,10 +401,15 @@ public class Home extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -381,16 +419,18 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel22)
+                    .addComponent(jLabel23))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -440,6 +480,7 @@ public class Home extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser fecha;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -451,10 +492,10 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
