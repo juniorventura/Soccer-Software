@@ -9,6 +9,7 @@ package com.GUI;
 import com.Core.Equipo;
 import com.Core.Jugador;
 import com.Core.Partido;
+import java.awt.Color;
 import java.util.ArrayList;
 
 /**
@@ -20,6 +21,7 @@ public class Home extends javax.swing.JFrame {
     /**
      * Creates new form Home
      */
+    
     int cantidadJugadores,ContJugadorE1,ContJugadorE2;
     private Partido p;
     private Equipo e1,e2;
@@ -29,19 +31,22 @@ public class Home extends javax.swing.JFrame {
     
     
     public Home() {
+        
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.getContentPane().setBackground(Color.WHITE);
     }
     
     public void crearPartido(){
         
-        e1 = new Equipo(nomEquipo1.getText(),pais.getText(),jugadoresE1);
-            e2 = new Equipo(Nomequipo2.getText(),pais2.getText(),jugadoresE2);
-            p = new Partido(fecha.getDate().toString(),estadio.getText(),e1,e2);
-            p.setNumeroJugadores(Integer.parseUnsignedInt(numerojugadores.getSelectedItem().toString()));
-         
-           Marcador m = new Marcador(p);
-           m.setVisible(true);
-           dispose(); 
+        e1 = new Equipo(nomEquipo1.getText(), pais.getText(), jugadoresE1);
+        e2 = new Equipo(Nomequipo2.getText(), pais2.getText(), jugadoresE2);
+        p = new Partido(fecha.getDate().toString(), estadio.getText(), e1, e2);
+        p.setNumeroJugadores(Integer.parseUnsignedInt(numerojugadores.getSelectedItem().toString()));
+
+        Marcador m = new Marcador(p);
+        m.setVisible(true);
+        dispose();
     }
 
     /**
@@ -53,6 +58,8 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
@@ -97,7 +104,21 @@ public class Home extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 255));
 
@@ -114,15 +135,17 @@ public class Home extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(69, 69, 69)
+                .addGap(115, 115, 115)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jButton2)
-                .addComponent(jLabel1))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -158,7 +181,6 @@ public class Home extends javax.swing.JFrame {
         pais.setForeground(new java.awt.Color(229, 249, 250));
 
         pais2.setBackground(new java.awt.Color(204, 204, 255));
-        pais2.setForeground(new java.awt.Color(229, 249, 250));
 
         Nomequipo2.setBackground(new java.awt.Color(204, 204, 255));
         Nomequipo2.setForeground(new java.awt.Color(229, 249, 250));
@@ -246,6 +268,8 @@ public class Home extends javax.swing.JFrame {
         numJeq1.setForeground(new java.awt.Color(255, 255, 255));
         numJeq1.setText("1");
 
+        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Datos Equipo No.1");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -267,9 +291,9 @@ public class Home extends javax.swing.JFrame {
                         .addComponent(apellJeq1)
                         .addComponent(posJeq1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
+                        .addGap(12, 12, 12)
                         .addComponent(jLabel20)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -317,6 +341,8 @@ public class Home extends javax.swing.JFrame {
         numJeq2.setForeground(new java.awt.Color(255, 255, 255));
         numJeq2.setText("1");
 
+        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("Datos Equipo No.2");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -340,9 +366,9 @@ public class Home extends javax.swing.JFrame {
                                 .addComponent(apellJeq2)
                                 .addComponent(posJeq2, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
+                        .addGap(26, 26, 26)
                         .addComponent(jLabel21)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -416,8 +442,8 @@ public class Home extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel22)
@@ -506,6 +532,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField nomEquipo1;
     private javax.swing.JTextField nomJeq1;
     private javax.swing.JTextField nomJeq2;

@@ -42,6 +42,23 @@ public class Inicio extends javax.swing.JFrame {
         
     }
 
+    
+    public void cargarPartido(){
+        
+        Consultas c = new Consultas();
+        c.setVisible(true);
+        dispose();
+        
+    }
+    
+     public void crearPartido(){
+         
+        Home h = new Home();
+        h.setVisible(true);
+        dispose();
+        
+         
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -60,10 +77,14 @@ public class Inicio extends javax.swing.JFrame {
         descripcioncrear = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        descripcionsobre = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         crearPartido = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        descripcionsobre = new javax.swing.JTextArea();
         sobrelaApp = new javax.swing.JLabel();
         descripcionguardar = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -77,7 +98,7 @@ public class Inicio extends javax.swing.JFrame {
 
         jLabel4.setText("jLabel4");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Soccer Software");
         setBackground(new java.awt.Color(51, 51, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -125,6 +146,9 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
         cargarPartido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cargarPartidoMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 cargarPartidoMouseExited(evt);
             }
@@ -162,6 +186,60 @@ public class Inicio extends javax.swing.JFrame {
 
         getContentPane().add(descripcioncrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, -1, -1));
 
+        descripcionsobre.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Version actual 2.2");
+
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Java 8");
+
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText(" @Autores: Junior Ventura");
+
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Nelson Colon");
+
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Victor Suero");
+
+        javax.swing.GroupLayout descripcionsobreLayout = new javax.swing.GroupLayout(descripcionsobre);
+        descripcionsobre.setLayout(descripcionsobreLayout);
+        descripcionsobreLayout.setHorizontalGroup(
+            descripcionsobreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(descripcionsobreLayout.createSequentialGroup()
+                .addGroup(descripcionsobreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(descripcionsobreLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(descripcionsobreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11)))
+                    .addGroup(descripcionsobreLayout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addGroup(descripcionsobreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel12))))
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+        descripcionsobreLayout.setVerticalGroup(
+            descripcionsobreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(descripcionsobreLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel13)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(descripcionsobre, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, -1, -1));
+
         jPanel3.setLayout(null);
 
         crearPartido.setFont(new java.awt.Font("RussellSquare", 0, 24)); // NOI18N
@@ -172,24 +250,15 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
         crearPartido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                crearPartidoMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 crearPartidoMouseExited(evt);
             }
         });
         jPanel3.add(crearPartido);
         crearPartido.setBounds(230, 200, 147, 22);
-
-        descripcionsobre.setEditable(false);
-        descripcionsobre.setBackground(new java.awt.Color(102, 102, 255));
-        descripcionsobre.setColumns(20);
-        descripcionsobre.setForeground(new java.awt.Color(255, 255, 255));
-        descripcionsobre.setRows(5);
-        descripcionsobre.setText("Version actuaal 2.2\nJava 8\n@Autores: Junior Ventura\n          Nelson Colon\n          Victor Suero");
-        descripcionsobre.setBorder(null);
-        jScrollPane3.setViewportView(descripcionsobre);
-
-        jPanel3.add(jScrollPane3);
-        jScrollPane3.setBounds(230, 270, 330, 100);
 
         sobrelaApp.setFont(new java.awt.Font("RussellSquare", 0, 18)); // NOI18N
         sobrelaApp.setText("Sobre la aplicacion");
@@ -303,6 +372,14 @@ public class Inicio extends javax.swing.JFrame {
         descripcionsobre.setVisible(false);
     }//GEN-LAST:event_sobrelaAppMouseExited
 
+    private void cargarPartidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cargarPartidoMouseClicked
+       cargarPartido();
+    }//GEN-LAST:event_cargarPartidoMouseClicked
+
+    private void crearPartidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearPartidoMouseClicked
+       crearPartido();
+    }//GEN-LAST:event_crearPartidoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -344,9 +421,13 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JPanel descripcioncrear;
     private javax.swing.JPanel descripcionguardar;
     private javax.swing.JTextArea descripcionguardar1;
-    private javax.swing.JTextArea descripcionsobre;
+    private javax.swing.JPanel descripcionsobre;
     private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -354,10 +435,10 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JLabel sobrelaApp;
     // End of variables declaration//GEN-END:variables
