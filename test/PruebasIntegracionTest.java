@@ -82,9 +82,9 @@ public class PruebasIntegracionTest extends TestCase {
         
         Marcador m = new Marcador(p);
         
-        
-        
         m.iniciarPartido();
+        
+        m.
        
         
     }
@@ -158,13 +158,6 @@ public class PruebasIntegracionTest extends TestCase {
       
     }
     
-     public void test5(){
-         
-         
-         
-         
-         
-     }
-  
+    
     
 }

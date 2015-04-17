@@ -36,9 +36,9 @@ public class Marcador extends javax.swing.JFrame {
     public static Calendar can = Calendar.getInstance();
     public static Calendar cann = new GregorianCalendar();
     public static int h, m, s; // Representan la hora, minuto y segundo del sistema actual
-    private int flagPausa;
+    public int flagPausa;
     private boolean faltaE1, jugadaE1, faltaE2, jugadaE2; // varaibles apra controlar las selecciones de los Jcombobox, para saber cual esta seleccionado
-    private int se1, se2;
+    public int se1, se2;
 
     public Marcador(Partido p) {
 
@@ -123,7 +123,7 @@ public class Marcador extends javax.swing.JFrame {
 
     }
 
-    Timer timer = new Timer(1000, new ActionListener() {
+    public Timer timer = new Timer(1000, new ActionListener() {
         public void actionPerformed(ActionEvent e) {
             ss++;
             if (ss == 60) {
@@ -389,6 +389,10 @@ public class Marcador extends javax.swing.JFrame {
        d.setVisible(true);
     }
     
+    public void eliminarEvento(){
+        if(modelo.getSize() > 0) modelo.remove(lista.getSelectedIndex());
+    }
+    
     public static void main (String[] args){
         
         Partido p = null;
@@ -522,7 +526,7 @@ public class Marcador extends javax.swing.JFrame {
                 .addGap(0, 12, Short.MAX_VALUE))
         );
 
-        selectorFaltaE1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Patada a adversario", " zancadilla a un adversario", "salto sobre un adversario", "cargar contra un adversario", " golpear a un adversario", "empujar a un adversario", "sujetar a un adversario", "escupir a un adversario", "tocar el balón deliberadamente con las manos" }));
+        selectorFaltaE1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Patada a adversario", "zancadilla a un adversario", "salto sobre un adversario", "cargar contra un adversario", "golpear a un adversario", "empujar a un adversario", "sujetar a un adversario", "escupir a un adversario", "tocar el balón deliberadamente con las manos" }));
         selectorFaltaE1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 selectorFaltaE1ItemStateChanged(evt);
@@ -653,7 +657,7 @@ public class Marcador extends javax.swing.JFrame {
                 .addGap(0, 12, Short.MAX_VALUE))
         );
 
-        selectorFaltaE2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Patada a adversario", " zancadilla a un adversario", "salto sobre un adversario", "cargar contra un adversario", " golpear a un adversario", "empujar a un adversario", "sujetar a un adversario", "escupir a un adversario", "tocar el balón deliberadamente con las manos" }));
+        selectorFaltaE2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Patada a adversario", "zancadilla a un adversario", "salto sobre un adversario", "cargar contra un adversario", "golpear a un adversario", "empujar a un adversario", "sujetar a un adversario", "escupir a un adversario", "tocar el balón deliberadamente con las manos" }));
         selectorFaltaE2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 selectorFaltaE2ItemStateChanged(evt);
@@ -965,7 +969,7 @@ public class Marcador extends javax.swing.JFrame {
     }//GEN-LAST:event_eventoDescripcionActionPerformed
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
-         if(modelo.getSize() > 0) modelo.remove(lista.getSelectedIndex());
+         eliminarEvento();
     }//GEN-LAST:event_eliminarActionPerformed
 
     private void exportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportarActionPerformed
@@ -981,11 +985,11 @@ public class Marcador extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox NjugadoresE1;
-    private javax.swing.JComboBox NjugadoresE2;
+    public javax.swing.JComboBox NjugadoresE1;
+    public javax.swing.JComboBox NjugadoresE2;
     private javax.swing.JButton eliminar;
-    private javax.swing.JLabel equipo1;
-    private javax.swing.JLabel equipo2;
+    public javax.swing.JLabel equipo1;
+    public javax.swing.JLabel equipo2;
     private javax.swing.JButton eventoDescripcion;
     private javax.swing.JButton exportar;
     private javax.swing.JButton iniciar;
@@ -1007,14 +1011,14 @@ public class Marcador extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JList lista;
+    public javax.swing.JList lista;
     private javax.swing.JButton pausar;
     private javax.swing.JTextField scoreE1;
     private javax.swing.JTextField scoreE2;
-    private javax.swing.JComboBox selectorFaltaE1;
-    private javax.swing.JComboBox selectorFaltaE2;
-    private javax.swing.JComboBox selectorJugadaE1;
-    private javax.swing.JComboBox selectorJugadaE2;
+    public javax.swing.JComboBox selectorFaltaE1;
+    public javax.swing.JComboBox selectorFaltaE2;
+    public javax.swing.JComboBox selectorJugadaE1;
+    public javax.swing.JComboBox selectorJugadaE2;
     private javax.swing.JLabel tiempo;
     private javax.swing.JLabel tiempoTexto;
     // End of variables declaration//GEN-END:variables

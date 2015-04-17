@@ -32,8 +32,8 @@ public class Consultas extends javax.swing.JFrame {
         
     }
     
-    DefaultListModel modelo = new DefaultListModel();
-    DefaultListModel modelo2 = new DefaultListModel();
+    public DefaultListModel modelo = new DefaultListModel();
+    public DefaultListModel modelo2 = new DefaultListModel();
     
     
   
