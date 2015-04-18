@@ -431,7 +431,7 @@ public class Marcador extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel9.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel9.setForeground(new java.awt.Color(255, 255, 255));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -473,22 +473,19 @@ public class Marcador extends javax.swing.JFrame {
         jPanel9.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 280, -1));
 
         jLabel7.setFont(new java.awt.Font("RussellSquare", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setForeground(new java.awt.Color(51, 0, 255));
         jLabel7.setText("Score");
         jPanel9.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("falta");
         jPanel9.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("jugada");
         jPanel9.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
 
         selectorJugadaE3.setBackground(new java.awt.Color(0, 0, 255));
-        selectorJugadaE3.setForeground(new java.awt.Color(255, 255, 255));
         selectorJugadaE3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Anotacion----------------", "GOAL!!!!!!", "Ofensivas----------------", "Despeje", "Saques de banda", "Saques de portería", "Saques de esquina", "Romper el fuera de juego", "Cambiar el juego", "Pase y movimiento", "Agujero defensive", "Triangulacion", "Intercambio de bandas", "Hombre clave", "Defensiva--------------------", "Posiciones adelantadas", "Tiros libres de corto alcance", "Saques de esquina y otros cruces", "Penaltis", "Juego defensivo hombre a hombre", " lanzamiento cruzado", " " }));
         selectorJugadaE3.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -513,11 +510,10 @@ public class Marcador extends javax.swing.JFrame {
         jPanel9.add(selectorJugadaE3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 210, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("por jugador #");
         jPanel9.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
-        insertar1.setBackground(new java.awt.Color(0, 0, 255));
+        insertar1.setBackground(new java.awt.Color(255, 255, 255));
         insertar1.setForeground(new java.awt.Color(255, 255, 255));
         insertar1.setText("Insertar");
         insertar1.setBorderPainted(false);
@@ -529,7 +525,6 @@ public class Marcador extends javax.swing.JFrame {
         jPanel9.add(insertar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, -1, 20));
 
         selectorFaltaE3.setBackground(new java.awt.Color(0, 0, 255));
-        selectorFaltaE3.setForeground(new java.awt.Color(255, 255, 255));
         selectorFaltaE3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Patada a adversario", " zancadilla a un adversario", "salto sobre un adversario", "cargar contra un adversario", " golpear a un adversario", "empujar a un adversario", "sujetar a un adversario", "escupir a un adversario", "tocar el balón deliberadamente con las manos" }));
         selectorFaltaE3.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -562,7 +557,6 @@ public class Marcador extends javax.swing.JFrame {
         });
         jPanel9.add(selectorFaltaE3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 210, -1));
 
-        NjugadoresE3.setForeground(new java.awt.Color(255, 255, 255));
         jPanel9.add(NjugadoresE3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 60, -1));
 
         jPanel12.setBackground(new java.awt.Color(0, 0, 255));
