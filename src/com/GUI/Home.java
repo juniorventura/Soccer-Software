@@ -127,6 +127,11 @@ public class Home extends javax.swing.JFrame {
         jLabel1.setText("Creando Partido");
 
         jButton2.setText("Inicio");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -134,10 +139,9 @@ public class Home extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(115, 115, 115)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(117, 117, 117)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,7 +164,6 @@ public class Home extends javax.swing.JFrame {
         jLabel6.setText("Estadio:");
 
         estadio.setBackground(new java.awt.Color(204, 204, 255));
-        estadio.setForeground(new java.awt.Color(229, 249, 250));
 
         numerojugadores.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2", "7", "8", "9", "10", "11" }));
 
@@ -175,15 +178,12 @@ public class Home extends javax.swing.JFrame {
         jLabel14.setText("Pais");
 
         nomEquipo1.setBackground(new java.awt.Color(204, 204, 255));
-        nomEquipo1.setForeground(new java.awt.Color(229, 249, 250));
 
         pais.setBackground(new java.awt.Color(204, 204, 255));
-        pais.setForeground(new java.awt.Color(229, 249, 250));
 
         pais2.setBackground(new java.awt.Color(204, 204, 255));
 
         Nomequipo2.setBackground(new java.awt.Color(204, 204, 255));
-        Nomequipo2.setForeground(new java.awt.Color(229, 249, 250));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -462,6 +462,12 @@ public class Home extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    
+    
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+      
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
