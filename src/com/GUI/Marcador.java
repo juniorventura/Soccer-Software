@@ -32,12 +32,14 @@ public class Marcador extends javax.swing.JFrame {
     private int flagPausa;
     private boolean faltaE1,jugadaE1,faltaE2,jugadaE2; // varaibles apra controlar las selecciones de los Jcombobox, para saber cual esta seleccionado
     private int se1,se2;
+    public static String nombreArchivo;
     
    
     public Marcador(Partido p) {
         initComponents();
           this.p = p; // ASIGNA LA VARIABLE P (PARTIDO) DE LA CLASE HOME A LA VARIABLE PARTIDO DE ESTA CLASE
         
+         nombreArchivo = null; 
         faltaE1 = false;
         jugadaE1 = false;
         faltaE2 = false;
@@ -206,13 +208,13 @@ public class Marcador extends javax.swing.JFrame {
                 return null;
         }
         */
-        public void crearArchivo(){
+        public void crearArchivo(String nombreArchivo){
             
-             String nombre;
-             nombre = generateRandom()+" Partido "+p.getEquipo1().getNombre()+" VS "+p.getEquipo2().getNombre();
+            String  nombre;
+            nombre = generateRandom()+" Partido "+p.getEquipo1().getNombre()+" VS "+p.getEquipo2().getNombre();
           
              
-            File fi = new File(nombre+".txt");
+            File fi = new File(nombreArchivo+nombre+".txt");
            
             if(!fi.exists()){
                 

@@ -5,6 +5,8 @@
  */
 
 import com.Core.*;
+import com.GUI.ArchivoACrear;
+import com.GUI.DescripcionEvento;
 import com.GUI.Marcador;
 import java.lang.annotation.Annotation;
 import java.util.ArrayList;
@@ -83,6 +85,16 @@ public class PruebasUnitariasTest extends TestCase{
         assertEquals("medio campo", j6.getPosicion());
         assertEquals("perez", j7.getApellido());
            
+    }
+    
+    public void test3(){
+        
+        ArchivoACrear a = new ArchivoACrear();
+        a.convertirARutaValida("C:\\Users\\Junior C\\Desktop\\Programas ´propios\\Java (Eclipse)\\File read and write\\");
+        assertEquals("C:\\Users\\Junior C\\Desktop\\Programas ´propios\\Java (Eclipse)\\File read and write\\",
+                 a.convertirARutaValida("C:\\Users\\Junior C\\Desktop\\Programas ´propios\\Java (Eclipse)\\File read and write\\"));
+        
+        
     }
     
     
