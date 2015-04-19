@@ -26,7 +26,8 @@ public class Equipo {
       Score = 0;
       jugadores = j;
     }
-  
+
+   
     public String getNombre()
     {
         return this.nombre;
@@ -62,9 +63,13 @@ public class Equipo {
         jugadores.add(j);
     }
     
+    public int getScore(){
+        return this.Score;
+    }
+    
     public String getNombreApellJugador(int n) // Retorna el nombre y apellido del jugador a buscar 
     {
-        if(n > jugadores.size() || n < jugadores.size()) return null;
+        if(n > jugadores.size() || n < 0) return null;
         else
         {
              for(Jugador j : jugadores)

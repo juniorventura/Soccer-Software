@@ -6,18 +6,254 @@
 
 package com.GUI;
 import com.Core.Partido;
+import java.awt.Color;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Junior C
  */
 public class Marcador extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Marcador
-     */
+    
+    private DefaultComboBoxModel modelocombo;
+    public static DefaultListModel modelo; // MODELO QUE CONTENDRA LOS EVENTOS QUE SUCEDAN EN EL PARTIDO 
+    public static int ss,mm,hh;  // SS HH Y MM REPRESENTAN LAS VARAIBLES APRA LOS SEGUNDOS MINTOS Y HORA DEL PARTIDO
+    private Partido p;
+    public static Calendar can = Calendar.getInstance();
+    public static Calendar cann = new GregorianCalendar();
+    public static int h,m,s; // Representan la hora, minuto y segundo del sistema actual
+    private int flagPausa;
+    private boolean faltaE1,jugadaE1,faltaE2,jugadaE2; // varaibles apra controlar las selecciones de los Jcombobox, para saber cual esta seleccionado
+    private int se1,se2;
+    
+   
     public Marcador(Partido p) {
         initComponents();
+          this.p = p; // ASIGNA LA VARIABLE P (PARTIDO) DE LA CLASE HOME A LA VARIABLE PARTIDO DE ESTA CLASE
+        
+        faltaE1 = false;
+        jugadaE1 = false;
+        faltaE2 = false;
+        jugadaE2 = false;
+        flagPausa = 1;
+        h = 0;
+        s = 0; 
+        m = 0;
+        ss = 0;  
+        mm = 0;
+        hh = 0;
+        
+        modelocombo = new DefaultComboBoxModel();
+        
+        NjugadoresE1.setModel(modelocombo);
+        
+        NjugadoresE2.setModel(modelocombo);
+        
+        switch(p.getNumeroJugadores())  // añade al combobox los numeros del 1 al (numero de jugadores seleccionado acteriormente)
+        {
+            case 2 : {
+                     for(int i = 1; i <= 2; i++) modelocombo.addElement(i);
+                    
+                  }
+            break;
+            case 7 : {
+                     for(int i = 1; i <= 7; i++) modelocombo.addElement(i);
+                    
+                  }
+            break;
+            case 8 : {
+                     for(int i = 1; i <= 8; i++) modelocombo.addElement(i);
+                  
+                  }
+            break;
+                case 9 : {
+                     for(int i = 1; i <= 9; i++) modelocombo.addElement(i);
+                   
+                  }
+            break;
+                    case 10 : {
+                     for(int i = 1; i <= 10; i++) modelocombo.addElement(i);
+                     
+                  }
+            break;
+                        case 11 : {
+                     for(int i = 1; i <= 11; i++) modelocombo.addElement(i);
+                     
+                  }
+            break;
+                
+               
+        }
+        
+       
+        equipo1.setText(p.getEquipo1().getNombre()); // SE SETEAN LAS NOMBRE Y PAIS DE LOS EQUIPOS EN EL MARCADOR
+        equipo2.setText(p.getEquipo2().getNombre());
+        pais1.setText(p.getEquipo1().getPais());
+        pais2.setText(p.getEquipo2().getPais());
+        modelo = new DefaultListModel(); 
+        lista.setModel(modelo); // SE LE ENVIA A LA LISTA ESOS EVENTOS APRA MORTARLOS
+        
+        
+         selectorFaltaE1.setBackground(Color.BLUE);
+         selectorJugadaE1.setBackground(Color.BLUE);
+         NjugadoresE1.setBackground(Color.BLUE);
+         NjugadoresE2.setBackground(Color.GREEN);
+         selectorFaltaE2.setBackground(Color.GREEN);
+         selectorJugadaE2.setBackground(Color.GREEN);
+        
+        this.getContentPane().setBackground(Color.white); // PONE EL COLOR DEL FORMULARIO EN BLANCO
+        setLocationRelativeTo(null);
+        
     }
+    
+     public static String getHoraActual(){
+            
+              h = cann.get(Calendar.HOUR_OF_DAY);
+              m = cann.get(Calendar.MINUTE);
+              s = cann.get(Calendar.SECOND);
+              
+              return (h+":"+m+":"+s);
+        }
+        
+        
+        public String generateRandom() // Funcion que genera un codigo aleatorio de 3 digitos que tendra el nombre dle archivo txt
+        {
+            StringBuffer ss = new StringBuffer();
+            for(int i = 0; i < 3; i++) ss.append(Math.round(Math.random() * 9));
+            
+            return ss.toString();
+        }
+        
+        public static String getTiempoPartido(){
+            
+            if(ss > 9 && mm > 9) return ("0"+hh+":"+mm+":"+ss);
+            
+            else if(ss < 10 && mm < 10)return ("0"+hh+":"+"0"+mm+":"+"0"+ss);
+            
+            else if(ss > 9 && mm < 10) return ("0"+hh+":"+"0"+mm+":"+ss);
+            
+            else return ("0"+hh+":"+mm+":0"+ss);
+        }
+        
+        public String tipoJugada(int n)
+        {
+            if(n != 0 && n!= 1 && n != 3 && n != 15)
+            {
+                if(n <= 3) return "//Jugada ANOTACION";
+                else if(n >= 4 || n <= 14) return "//Jugada OFENSIVA";
+                else return "//Jugada DEFENSIVA";
+               
+            }
+           return null;
+        }
+        
+        public String insertarFaltaJugadaE1(){
+            
+            int n = Integer.parseInt(NjugadoresE1.getSelectedItem().toString());
+            int k = selectorJugadaE1.getSelectedIndex();
+            
+            if(faltaE1 == true){
+                
+                return ("** "+getTiempoPartido()+" "+p.getEquipo1().getNombreApellJugador(n)+" Equipo "+p.getEquipo1().getNombre()+" // Falta // "
+                        +selectorFaltaE1.getSelectedItem().toString() );
+            }
+           else{
+               
+                 if(selectorJugadaE1.getSelectedIndex() == 2) p.getEquipo1().setScore(++se1);
+                 if(p.getEquipo1().getScore()< 10)scoreE1.setText("0"+String.valueOf(p.getEquipo1().getScore()));
+                 else scoreE1.setText(String.valueOf(p.getEquipo1().getScore()));
+                
+                return ("** "+getTiempoPartido()+" "+p.getEquipo1().getNombreApellJugador(n)+" Equipo "+p.getEquipo1().getNombre()+" "+tipoJugada(k)+" "
+                        +selectorJugadaE1.getSelectedItem().toString() );
+            }
+        }
+        
+        public String insertarFaltaJugadaE2(){
+            
+            int n = Integer.parseInt(NjugadoresE2.getSelectedItem().toString());
+             int k = selectorJugadaE2.getSelectedIndex();
+            if(faltaE2 == true){
+                
+                return ("** "+getTiempoPartido()+" "+p.getEquipo2().getNombreApellJugador(n)+" Equipo "+p.getEquipo2().getNombre()+" // Falta // "
+                        +selectorFaltaE2.getSelectedItem().toString() );
+            }
+           else{
+               
+                 if(selectorJugadaE2.getSelectedIndex() == 2) p.getEquipo1().setScore(++se2);
+                 if(p.getEquipo2().getScore() < 10)scoreE2.setText("0"+String.valueOf(p.getEquipo2().getScore()));
+                 else scoreE2.setText(String.valueOf(p.getEquipo2().getScore()));
+                
+                return ("** "+getTiempoPartido()+" "+p.getEquipo2().getNombreApellJugador(n)+" Equipo "+p.getEquipo2().getNombre()+" "+tipoJugada(k)+" "
+                        +selectorJugadaE2.getSelectedItem().toString() );
+            }
+        }
+        
+        
+        /*
+        public String nombreJugador(int n,ArrayList<Jugador> jug)
+        {
+            
+                for(Jugador j : jug)
+                    if(j.getNumero() == n) return j.getNombre()+" "+j.getApellido();
+        
+                return null;
+        }
+        */
+        public void crearArchivo(){
+            
+             String nombre;
+             nombre = generateRandom()+" Partido "+p.getEquipo1().getNombre()+" VS "+p.getEquipo2().getNombre();
+          
+             
+            File fi = new File(nombre+".txt");
+           
+            if(!fi.exists()){
+                
+                try{
+                     fi.createNewFile();
+                    FileWriter f = new FileWriter(fi);
+                  
+                 for(int i = 0; i < lista.getModel().getSize(); i++)
+                {
+               
+                  f.write((String) lista.getModel().getElementAt(i)); 
+                  f.write("\r\n");
+                }
+                f.close();
+                   
+                    
+                }catch(IOException e){ JOptionPane.showMessageDialog(rootPane, "NO SE PUDO CREAR EL ARCHIVO");}
+               
+            }
+             else 
+            {
+              try{
+                     fi = new File(nombre+" "+generateRandom()+".txt");
+                     fi.createNewFile();
+                    FileWriter f = new FileWriter(fi);
+                  
+                 for(int i = 0; i < lista.getModel().getSize(); i++)
+                {
+               
+                  f.write((String) lista.getModel().getElementAt(i)); 
+                  f.write("\r\n");
+                }
+                f.close();
+                   
+                    
+                }catch(IOException e){ JOptionPane.showMessageDialog(rootPane, "NO SE PUDO CREAR EL ARCHIVO");}
+                
+                
+            }
+            
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -89,7 +325,7 @@ public class Marcador extends javax.swing.JFrame {
         jPanel11 = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        lista = new javax.swing.JList();
         jPanel16 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -692,8 +928,8 @@ public class Marcador extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jList1.setBackground(new java.awt.Color(204, 204, 204));
-        jScrollPane1.setViewportView(jList1);
+        lista.setBackground(new java.awt.Color(204, 204, 204));
+        jScrollPane1.setViewportView(lista);
 
         jPanel16.setBackground(new java.awt.Color(0, 0, 255));
 
@@ -722,6 +958,11 @@ public class Marcador extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(0, 0, 255));
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Evento por descripcion");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setBackground(new java.awt.Color(0, 0, 255));
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
@@ -944,6 +1185,12 @@ public class Marcador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_scoreE3ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+       DescripcionEvento d = new DescripcionEvento();
+       d.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -983,7 +1230,6 @@ public class Marcador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -1000,6 +1246,7 @@ public class Marcador extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JList lista;
     private javax.swing.JLabel pais1;
     private javax.swing.JLabel pais2;
     private javax.swing.JTextField scoreE1;
