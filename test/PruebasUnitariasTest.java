@@ -6,6 +6,7 @@
 
 import com.Core.*;
 import com.GUI.ArchivoACrear;
+import com.GUI.Consultas;
 import com.GUI.DescripcionEvento;
 import com.GUI.Marcador;
 import java.lang.annotation.Annotation;
@@ -89,10 +90,8 @@ public class PruebasUnitariasTest extends TestCase{
     
     public void test3(){
         
-        ArchivoACrear a = new ArchivoACrear();
-        a.convertirARutaValida("C:\\Users\\Junior C\\Desktop\\Programas ´propios\\Java (Eclipse)\\File read and write\\");
-        assertEquals("C:\\Users\\Junior C\\Desktop\\Programas ´propios\\Java (Eclipse)\\File read and write\\",
-                 a.convertirARutaValida("C:\\Users\\Junior C\\Desktop\\Programas ´propios\\Java (Eclipse)\\File read and write\\"));
+       Consultas c = new Consultas();
+       
         
         
     }
