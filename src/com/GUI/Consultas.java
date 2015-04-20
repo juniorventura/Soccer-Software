@@ -28,6 +28,7 @@ public class Consultas extends javax.swing.JFrame {
         lista.setModel(modelo);
         lista2.setModel(modelo2);
         leerUltimosArchivosCreador();
+        this.getContentPane().setBackground(Color.getHSBColor(0, 102, 153));
         
     }
     
@@ -134,93 +135,85 @@ public class Consultas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        lista = new javax.swing.JList();
+        fondopanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         lista2 = new javax.swing.JList();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        lista = new javax.swing.JList();
         jButton3 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        fondoImagen = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 102, 153));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jScrollPane1.setViewportView(lista);
+        fondopanel.setLayout(null);
 
-        lista2.setBackground(new java.awt.Color(204, 204, 204));
+        lista2.setBackground(new java.awt.Color(0, 102, 102));
+        lista2.setForeground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setViewportView(lista2);
 
+        fondopanel.add(jScrollPane2);
+        jScrollPane2.setBounds(10, 110, 214, 460);
+
+        jLabel1.setFont(new java.awt.Font("RussellSquare", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Archivos creados recientemente");
+        fondopanel.add(jLabel1);
+        jLabel1.setBounds(10, 60, 211, 13);
+
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Seleccione un archivo");
+        fondopanel.add(jLabel2);
+        jLabel2.setBounds(60, 80, 130, 14);
+
+        jButton1.setBackground(new java.awt.Color(0, 102, 255));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Abrir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        fondopanel.add(jButton1);
+        jButton1.setBounds(10, 10, 55, 23);
 
+        jButton2.setBackground(new java.awt.Color(0, 102, 255));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("buscar por directorio");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+        fondopanel.add(jButton2);
+        jButton2.setBounds(70, 10, 160, 23);
 
-        jLabel1.setFont(new java.awt.Font("RussellSquare", 0, 14)); // NOI18N
-        jLabel1.setText("Archivos creados recientemente");
+        jScrollPane1.setViewportView(lista);
 
+        fondopanel.add(jScrollPane1);
+        jScrollPane1.setBounds(230, 50, 700, 529);
+
+        jButton3.setBackground(new java.awt.Color(0, 0, 255));
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Inicio");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
+        fondopanel.add(jButton3);
+        jButton3.setBounds(820, 10, 119, 23);
 
-        jLabel2.setText("Seleccione un archivo");
+        fondoImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Imagenes/Fondo-azul.png"))); // NOI18N
+        fondopanel.add(fondoImagen);
+        fondoImagen.setBounds(0, 0, 940, 610);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(554, 554, 554)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addComponent(jLabel2)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 707, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 18, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 3, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1))
-                .addGap(21, 21, 21))
-        );
+        getContentPane().add(fondopanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 640));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -293,6 +286,8 @@ public class Consultas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel fondoImagen;
+    private javax.swing.JPanel fondopanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

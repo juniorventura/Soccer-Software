@@ -149,6 +149,9 @@ public class Inicio extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cargarPartidoMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cargarPartidoMouseEntered(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 cargarPartidoMouseExited(evt);
             }
@@ -253,6 +256,9 @@ public class Inicio extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 crearPartidoMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                crearPartidoMouseEntered(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 crearPartidoMouseExited(evt);
             }
@@ -268,6 +274,9 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
         sobrelaApp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                sobrelaAppMouseEntered(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 sobrelaAppMouseExited(evt);
             }
@@ -336,38 +345,38 @@ public class Inicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cargarPartidoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cargarPartidoMouseMoved
-        seleccion.play();
+       
         cargarPartido.setForeground(Color.BLUE);
         descripcionguardar.setVisible(true);
         
     }//GEN-LAST:event_cargarPartidoMouseMoved
 
     private void cargarPartidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cargarPartidoMouseExited
-         seleccion.stop();
+        
         cargarPartido.setForeground(Color.BLACK);
         descripcionguardar.setVisible(false);
     }//GEN-LAST:event_cargarPartidoMouseExited
 
     private void crearPartidoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearPartidoMouseMoved
-        seleccion.play();
+       
         crearPartido.setForeground(Color.BLUE);
         descripcioncrear.setVisible(true);
     }//GEN-LAST:event_crearPartidoMouseMoved
 
     private void crearPartidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearPartidoMouseExited
-        seleccion.stop();
+       
         crearPartido.setForeground(Color.BLACK);
         descripcioncrear.setVisible(false);
     }//GEN-LAST:event_crearPartidoMouseExited
 
     private void sobrelaAppMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sobrelaAppMouseMoved
-      seleccion.play();
+      
         sobrelaApp.setForeground(Color.BLUE);
         descripcionsobre.setVisible(true);
     }//GEN-LAST:event_sobrelaAppMouseMoved
 
     private void sobrelaAppMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sobrelaAppMouseExited
-         seleccion.stop(); 
+         
         sobrelaApp.setForeground(Color.BLACK);
         descripcionsobre.setVisible(false);
     }//GEN-LAST:event_sobrelaAppMouseExited
@@ -379,6 +388,18 @@ public class Inicio extends javax.swing.JFrame {
     private void crearPartidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearPartidoMouseClicked
        crearPartido();
     }//GEN-LAST:event_crearPartidoMouseClicked
+
+    private void cargarPartidoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cargarPartidoMouseEntered
+         seleccion.play();
+    }//GEN-LAST:event_cargarPartidoMouseEntered
+
+    private void crearPartidoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearPartidoMouseEntered
+      seleccion.play();
+    }//GEN-LAST:event_crearPartidoMouseEntered
+
+    private void sobrelaAppMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sobrelaAppMouseEntered
+      seleccion.play();
+    }//GEN-LAST:event_sobrelaAppMouseEntered
 
     /**
      * @param args the command line arguments
