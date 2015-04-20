@@ -90,7 +90,8 @@ public class PruebasUnitariasTest extends TestCase{
     
     public void test3(){
         
-       Consultas c = new Consultas();
+      
+       
        
         
         

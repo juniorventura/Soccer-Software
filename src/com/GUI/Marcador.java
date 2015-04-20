@@ -60,7 +60,7 @@ public class Marcador extends javax.swing.JFrame {
         NjugadoresE2.setModel(modelocombo);
         
       
-
+      
         switch (p.getNumeroJugadores()) // añade al combobox los numeros del 1 al (numero de jugadores seleccionado acteriormente)
         {
             case 2: {
@@ -107,12 +107,12 @@ public class Marcador extends javax.swing.JFrame {
             break;
 
         }
-
+        
         equipo1.setText(p.getEquipo1().getNombre()); // SE SETEAN LAS NOMBRE Y PAIS DE LOS EQUIPOS EN EL MARCADOR
         equipo2.setText(p.getEquipo2().getNombre());
         modelo = new DefaultListModel();
         lista.setModel(modelo); // SE LE ENVIA A LA LISTA ESOS EVENTOS APRA MORTARLOS
-
+         
         this.getContentPane().setBackground(Color.white); // PONE EL COLOR DEL FORMULARIO EN BLANCO
         setLocationRelativeTo(null);
 
@@ -325,6 +325,15 @@ public class Marcador extends javax.swing.JFrame {
        DescripcionEvento d = new DescripcionEvento();
        d.setVisible(true);
     }
+    
+    public static void main (String[] args){
+        
+        Partido p = null;
+        
+        Marcador m = new Marcador(p);
+        m.setVisible(true);
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -417,6 +426,7 @@ public class Marcador extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 0, 255));
         jLabel5.setText("SCORE");
 
+        scoreE1.setEditable(false);
         scoreE1.setBackground(new java.awt.Color(0, 102, 102));
         scoreE1.setFont(new java.awt.Font("RussellSquare", 1, 48)); // NOI18N
         scoreE1.setForeground(new java.awt.Color(255, 255, 255));
@@ -449,7 +459,7 @@ public class Marcador extends javax.swing.JFrame {
                 .addGap(0, 12, Short.MAX_VALUE))
         );
 
-        selectorFaltaE1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        selectorFaltaE1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Patada a adversario", " zancadilla a un adversario", "salto sobre un adversario", "cargar contra un adversario", " golpear a un adversario", "empujar a un adversario", "sujetar a un adversario", "escupir a un adversario", "tocar el balón deliberadamente con las manos" }));
         selectorFaltaE1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 selectorFaltaE1ItemStateChanged(evt);
@@ -461,7 +471,7 @@ public class Marcador extends javax.swing.JFrame {
             }
         });
 
-        selectorJugadaE1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        selectorJugadaE1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Anotacion----------------", "GOAL!!!!!!", "Ofensivas----------------", "Despeje", "Saques de banda", "Saques de portería", "Saques de esquina", "Romper el fuera de juego", "Cambiar el juego", "Pase y movimiento", "Agujero defensive", "Triangulacion", "Intercambio de bandas", "Hombre clave", "Defensiva--------------------", "Posiciones adelantadas", "Tiros libres de corto alcance", "Saques de esquina y otros cruces", "Penaltis", "Juego defensivo hombre a hombre", " lanzamiento cruzado" }));
         selectorJugadaE1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 selectorJugadaE1ItemStateChanged(evt);
@@ -496,9 +506,9 @@ public class Marcador extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(31, 31, 31)
                         .addComponent(scoreE1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 54, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -547,6 +557,7 @@ public class Marcador extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(0, 0, 255));
         jLabel11.setText("SCORE");
 
+        scoreE2.setEditable(false);
         scoreE2.setBackground(new java.awt.Color(0, 102, 102));
         scoreE2.setFont(new java.awt.Font("RussellSquare", 1, 48)); // NOI18N
         scoreE2.setForeground(new java.awt.Color(255, 255, 255));
@@ -579,14 +590,14 @@ public class Marcador extends javax.swing.JFrame {
                 .addGap(0, 12, Short.MAX_VALUE))
         );
 
-        selectorFaltaE2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        selectorFaltaE2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Patada a adversario", " zancadilla a un adversario", "salto sobre un adversario", "cargar contra un adversario", " golpear a un adversario", "empujar a un adversario", "sujetar a un adversario", "escupir a un adversario", "tocar el balón deliberadamente con las manos" }));
         selectorFaltaE2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 selectorFaltaE2ItemStateChanged(evt);
             }
         });
 
-        selectorJugadaE2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        selectorJugadaE2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Anotacion----------------", "GOAL!!!!!!", "Ofensivas----------------", "Despeje", "Saques de banda", "Saques de portería", "Saques de esquina", "Romper el fuera de juego", "Cambiar el juego", "Pase y movimiento", "Agujero defensive", "Triangulacion", "Intercambio de bandas", "Hombre clave", "Defensiva--------------------", "Posiciones adelantadas", "Tiros libres de corto alcance", "Saques de esquina y otros cruces", "Penaltis", "Juego defensivo hombre a hombre", " lanzamiento cruzado" }));
         selectorJugadaE2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 selectorJugadaE2ItemStateChanged(evt);
@@ -608,28 +619,29 @@ public class Marcador extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(NjugadoresE2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(insertar2))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(scoreE2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(31, 31, 31)
+                        .addComponent(scoreE2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9)
                             .addComponent(jLabel8))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(selectorFaltaE2, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(selectorJugadaE2, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(selectorFaltaE2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(selectorJugadaE2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NjugadoresE2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(insertar2))
+                    .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -662,7 +674,7 @@ public class Marcador extends javax.swing.JFrame {
         iniciar.setBackground(new java.awt.Color(0, 102, 102));
         iniciar.setForeground(new java.awt.Color(255, 255, 255));
         iniciar.setText("Iniciar Partido");
-        iniciar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        iniciar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         iniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 iniciarActionPerformed(evt);
@@ -672,7 +684,7 @@ public class Marcador extends javax.swing.JFrame {
         pausar.setBackground(new java.awt.Color(0, 102, 102));
         pausar.setForeground(new java.awt.Color(255, 255, 255));
         pausar.setText("Pausar Partido");
-        pausar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pausar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pausar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pausarActionPerformed(evt);
@@ -682,7 +694,7 @@ public class Marcador extends javax.swing.JFrame {
         eventoDescripcion.setBackground(new java.awt.Color(0, 102, 102));
         eventoDescripcion.setForeground(new java.awt.Color(255, 255, 255));
         eventoDescripcion.setText("Evento por descripcion");
-        eventoDescripcion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        eventoDescripcion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         eventoDescripcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eventoDescripcionActionPerformed(evt);
@@ -692,7 +704,7 @@ public class Marcador extends javax.swing.JFrame {
         eliminar.setBackground(new java.awt.Color(0, 102, 102));
         eliminar.setForeground(new java.awt.Color(255, 255, 255));
         eliminar.setText("Eliminar evento");
-        eliminar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        eliminar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eliminarActionPerformed(evt);
@@ -702,7 +714,7 @@ public class Marcador extends javax.swing.JFrame {
         exportar.setBackground(new java.awt.Color(0, 102, 102));
         exportar.setForeground(new java.awt.Color(255, 255, 255));
         exportar.setText("Exportar");
-        exportar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        exportar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         exportar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exportarActionPerformed(evt);
@@ -753,10 +765,10 @@ public class Marcador extends javax.swing.JFrame {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -903,15 +915,8 @@ public class Marcador extends javax.swing.JFrame {
         
     }//GEN-LAST:event_exportarActionPerformed
 
-    public static void main(String[] args) {
-        Partido p = new pa;
-        Marcador m = new Marcador(p);
-        m.setVisible(true);
-    }
-    /**
-     * @param args the command line arguments
-     */
-
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox NjugadoresE1;
     private javax.swing.JComboBox NjugadoresE2;

@@ -32,12 +32,12 @@
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jPanel3" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jPanel1" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="12" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -156,9 +156,9 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Component id="scoreE1" min="-2" pref="141" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="54" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
@@ -232,6 +232,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="scoreE1">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="0" type="rgb"/>
             </Property>
@@ -290,11 +291,17 @@
         <Component class="javax.swing.JComboBox" name="selectorFaltaE1">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="10">
+                <StringItem index="0" value="Seleccione"/>
+                <StringItem index="1" value="Patada a adversario"/>
+                <StringItem index="2" value=" zancadilla a un adversario"/>
+                <StringItem index="3" value="salto sobre un adversario"/>
+                <StringItem index="4" value="cargar contra un adversario"/>
+                <StringItem index="5" value=" golpear a un adversario"/>
+                <StringItem index="6" value="empujar a un adversario"/>
+                <StringItem index="7" value="sujetar a un adversario"/>
+                <StringItem index="8" value="escupir a un adversario"/>
+                <StringItem index="9" value="tocar el bal&#xf3;n deliberadamente con las manos"/>
               </StringArray>
             </Property>
           </Properties>
@@ -306,11 +313,29 @@
         <Component class="javax.swing.JComboBox" name="selectorJugadaE1">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="22">
+                <StringItem index="0" value="Seleccione"/>
+                <StringItem index="1" value="Anotacion----------------"/>
+                <StringItem index="2" value="GOAL!!!!!!"/>
+                <StringItem index="3" value="Ofensivas----------------"/>
+                <StringItem index="4" value="Despeje"/>
+                <StringItem index="5" value="Saques de banda"/>
+                <StringItem index="6" value="Saques de porter&#xed;a"/>
+                <StringItem index="7" value="Saques de esquina"/>
+                <StringItem index="8" value="Romper el fuera de juego"/>
+                <StringItem index="9" value="Cambiar el juego"/>
+                <StringItem index="10" value="Pase y movimiento"/>
+                <StringItem index="11" value="Agujero defensive"/>
+                <StringItem index="12" value="Triangulacion"/>
+                <StringItem index="13" value="Intercambio de bandas"/>
+                <StringItem index="14" value="Hombre clave"/>
+                <StringItem index="15" value="Defensiva--------------------"/>
+                <StringItem index="16" value="Posiciones adelantadas"/>
+                <StringItem index="17" value="Tiros libres de corto alcance"/>
+                <StringItem index="18" value="Saques de esquina y otros cruces"/>
+                <StringItem index="19" value="Penaltis"/>
+                <StringItem index="20" value="Juego defensivo hombre a hombre"/>
+                <StringItem index="21" value=" lanzamiento cruzado"/>
               </StringArray>
             </Property>
           </Properties>
@@ -356,23 +381,16 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="NjugadoresE2" min="-2" pref="68" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="insertar2" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                           <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Component id="scoreE2" min="-2" pref="141" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jPanel6" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -380,12 +398,20 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="selectorFaltaE2" min="-2" pref="235" max="-2" attributes="0"/>
-                              <Component id="selectorJugadaE2" min="-2" pref="235" max="-2" attributes="0"/>
+                              <Component id="selectorFaltaE2" max="32767" attributes="0"/>
+                              <Component id="selectorJugadaE2" max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="NjugadoresE2" min="-2" pref="68" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="insertar2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jPanel6" alignment="1" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -451,6 +477,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="scoreE2">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="0" type="rgb"/>
             </Property>
@@ -509,11 +536,17 @@
         <Component class="javax.swing.JComboBox" name="selectorFaltaE2">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="10">
+                <StringItem index="0" value="Seleccione"/>
+                <StringItem index="1" value="Patada a adversario"/>
+                <StringItem index="2" value=" zancadilla a un adversario"/>
+                <StringItem index="3" value="salto sobre un adversario"/>
+                <StringItem index="4" value="cargar contra un adversario"/>
+                <StringItem index="5" value=" golpear a un adversario"/>
+                <StringItem index="6" value="empujar a un adversario"/>
+                <StringItem index="7" value="sujetar a un adversario"/>
+                <StringItem index="8" value="escupir a un adversario"/>
+                <StringItem index="9" value="tocar el bal&#xf3;n deliberadamente con las manos"/>
               </StringArray>
             </Property>
           </Properties>
@@ -524,11 +557,29 @@
         <Component class="javax.swing.JComboBox" name="selectorJugadaE2">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="22">
+                <StringItem index="0" value="Seleccione"/>
+                <StringItem index="1" value="Anotacion----------------"/>
+                <StringItem index="2" value="GOAL!!!!!!"/>
+                <StringItem index="3" value="Ofensivas----------------"/>
+                <StringItem index="4" value="Despeje"/>
+                <StringItem index="5" value="Saques de banda"/>
+                <StringItem index="6" value="Saques de porter&#xed;a"/>
+                <StringItem index="7" value="Saques de esquina"/>
+                <StringItem index="8" value="Romper el fuera de juego"/>
+                <StringItem index="9" value="Cambiar el juego"/>
+                <StringItem index="10" value="Pase y movimiento"/>
+                <StringItem index="11" value="Agujero defensive"/>
+                <StringItem index="12" value="Triangulacion"/>
+                <StringItem index="13" value="Intercambio de bandas"/>
+                <StringItem index="14" value="Hombre clave"/>
+                <StringItem index="15" value="Defensiva--------------------"/>
+                <StringItem index="16" value="Posiciones adelantadas"/>
+                <StringItem index="17" value="Tiros libres de corto alcance"/>
+                <StringItem index="18" value="Saques de esquina y otros cruces"/>
+                <StringItem index="19" value="Penaltis"/>
+                <StringItem index="20" value="Juego defensivo hombre a hombre"/>
+                <StringItem index="21" value=" lanzamiento cruzado"/>
               </StringArray>
             </Property>
           </Properties>
@@ -607,8 +658,8 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Iniciar Partido"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-                <BevelBorder/>
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
               </Border>
             </Property>
           </Properties>
@@ -626,8 +677,8 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Pausar Partido"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-                <BevelBorder/>
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
               </Border>
             </Property>
           </Properties>
@@ -645,8 +696,8 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Evento por descripcion"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-                <BevelBorder/>
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
               </Border>
             </Property>
           </Properties>
@@ -664,8 +715,8 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Eliminar evento"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-                <BevelBorder/>
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
               </Border>
             </Property>
           </Properties>
@@ -683,8 +734,8 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Exportar"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-                <BevelBorder/>
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
               </Border>
             </Property>
           </Properties>
